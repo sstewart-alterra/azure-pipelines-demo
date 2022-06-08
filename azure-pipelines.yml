@@ -20,7 +20,7 @@ parameters:
 # - name: myBoolean
 #   type: boolean
 #   default: true
-- name: environments
+- name: servers
   type: object
   default:
     Group1:
@@ -38,10 +38,25 @@ trigger: none
 # - job: stepList
 #   steps: ${{ parameters.mySteplist }}
 
-stages:
-  - stage: Group1
-    jobs:
-    ${{ each environment in parameters.environments.Group1 }}:
-      - job: ${{environment}}
-        steps:
-          - script: echo ${{ environment }}
+# stages:
+#   - stage: Group1
+#     jobs:
+#     ${{ each server in parameters.servers.Group1 }}:
+#       - job: "${{server}}"
+#         steps:
+#           - script: echo ${{ server }}
+
+jobs:
+- job: Test
+  strategy:
+    maxParallel: 2
+    matrix: 
+      US_IE:
+        Location: US
+        Browser: IE
+      US_Chrome:
+        Location: US
+        Browser: Chrome
+      Europe_Chrome:
+        Location: Europe
+        Browser: Chrome
