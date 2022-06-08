@@ -31,15 +31,6 @@ parameters:
     - DD
     - EE
     - FF
-# - name: myStep
-#   type: step
-#   default:
-#     script: echo my step
-# - name: mySteplist
-#   type: stepList
-#   default:
-#     - script: echo step one
-#     - script: echo step two
 
 trigger: none
 
@@ -47,8 +38,10 @@ trigger: none
 # - job: stepList
 #   steps: ${{ parameters.mySteplist }}
 
-- ${{ each environment in parameters.environments.Group1 }}:
-  - script: echo ${{ environment }} 
-# - job: myStep
-#   steps:
-#     - ${{ parameters.myStep }}
+stages:
+  - stage: Group1
+    jobs:
+    ${{ each environment in parameters.environments.Group1 }}:
+      - job: ${{environment}}
+        steps:
+          - script: echo ${{ environment }}
