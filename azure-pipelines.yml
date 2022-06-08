@@ -1,25 +1,4 @@
 parameters:
-# - name: myString
-#   type: string
-#   default: a string
-# - name: myMultiString
-#   type: string
-#   default: default
-#   values:
-#   - default
-#   - ubuntu
-# - name: myNumber
-#   type: number
-#   default: 2
-#   values:
-#   - 1
-#   - 2
-#   - 4
-#   - 8
-#   - 16
-# - name: myBoolean
-#   type: boolean
-#   default: true
 - name: servers
   type: object
   default:
@@ -33,6 +12,8 @@ parameters:
     - FF
 
 trigger: none
+
+
 
 # jobs: 
 # - job: stepList
@@ -60,3 +41,6 @@ jobs:
       Europe_Chrome:
         Location: Europe
         Browser: Chrome
+  steps:
+    - script: echo $(Location)
+    - script: echo $(Browser)
