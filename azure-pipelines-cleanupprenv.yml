@@ -1,10 +1,12 @@
 trigger: none
 
-
 resources:
   webhooks:
     - webhook: CleanUpPREnv          ### Webhook alias
       connection: CleanUpPREnvWebhookConnection    ### Incoming webhook service connection
+      filters:
+      - path: action              ### JSON path in the payload
+        value: closed    ### Expected value in the path provided
 
 steps:
 - task: PowerShell@2
