@@ -15,5 +15,6 @@ steps:
     ### JSON payload data is available in the form of ${{ parameters.<WebhookAlias>.<JSONPath>}}
     script: |
       Write-Host ${{ parameters.BasicWebhook.before}}
+      Write-Host ${{ parameters.BasicWebhook.howifeel}}
       Write-Host ${{ parameters.BasicWebhook.payload.before}}
       Write-Host ${{ variables.BasicWebhook.before}}
