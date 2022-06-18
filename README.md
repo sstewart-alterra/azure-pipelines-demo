@@ -10,4 +10,4 @@ How about a second pull request
 And another pull request
 
 
-This has a webhook that attempts to delete PR environments when a PR is closed.
+This has a webhook that attempts to delete PR environments when a PR is closed. That particular webhook's pipeline should ONLY run when a PR is closed. 
