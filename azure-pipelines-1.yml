@@ -17,4 +17,3 @@ steps:
       Write-Host ${{ parameters.CleanUpPREnv.before}}
       Write-Host ${{ parameters.CleanUpPREnv.payload.before}}
       Write-Host ${{ variables.CleanUpPREnv.before}}
-      Write-Host ${{ parameters.CleanUpPREnvWebhookConnection.repository.name}}
