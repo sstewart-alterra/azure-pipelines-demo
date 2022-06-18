@@ -14,5 +14,11 @@ steps:
     targetType: 'inline'
     ### JSON payload data is available in the form of ${{ parameters.<WebhookAlias>.<JSONPath>}}
     script: |
+      Write-Host "Gonna clean up that PR environment now that the PR is closed."
+      Write-Host "I don't care whether the PR was approved or cancelled, let's delete this shtuff."
+      Write-Host "Deleting PR${{parameters.CleanUpPREnv.number}} resources..."
+      Start-Sleep 2
+      Write-Host "DELETED. Woo. I love clean environments."
+      Write-Host "----------------------------------------"
       Write-Host ${{ parameters.CleanUpPREnv.action}}
       Write-Host ${{ parameters.CleanUpPREnv.number}}
