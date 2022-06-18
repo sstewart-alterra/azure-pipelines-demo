@@ -11,6 +11,3 @@ And another pull request
 
 
 This has a webhook that attempts to delete PR environments when a PR is closed.
-
-
-Hi I'm spencer
