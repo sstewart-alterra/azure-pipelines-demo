@@ -17,3 +17,4 @@ steps:
     script: |
       Write-Host ${{ parameters.CleanUpPREnv.before}}
       Write-Host ${{ parameters.CleanUpPREnv.repository.full_name}}
+      Write-Host ${{ parameters.CleanUpPREnv.repository}}
