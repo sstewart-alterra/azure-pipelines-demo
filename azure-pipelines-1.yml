@@ -14,5 +14,5 @@ steps:
     targetType: 'inline'
     ### JSON payload data is available in the form of ${{ parameters.<WebhookAlias>.<JSONPath>}}
     script: |
-      Write-Host ${{ parameters.MyWebhookTrigger.repositoryName}}
-      Write-Host ${{ parameters.MyWebhookTrigger.component.group}}
+      Write-Host ${{ parameters.CleanUpPREnv.repositoryName}}
+      Write-Host ${{ parameters.CleanUpPREnv.component.group}}
