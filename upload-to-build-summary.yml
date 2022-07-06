@@ -24,8 +24,7 @@ steps:
         $MyMarkDown | Out-File -FilePath .\MyMarkdown.md
         dir
         pwd
-        Write-Output "$(System.DefaultWorkingDirectory)"
-        Write-Output "${{System.DefaultWorkingDirectory}}"
-        Write-Output "##vso[task.uploadsummary]${{System.DefaultWorkingDirectory}}\MyMarkdown.md"
+        Write-Output $env:System_DefaultWorkingDirectory
+        Write-Output "##vso[task.uploadsummary]$env:System_DefaultWorkingDirectory\MyMarkdown.md"
 
   
