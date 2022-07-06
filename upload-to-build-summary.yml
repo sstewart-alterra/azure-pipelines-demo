@@ -22,6 +22,8 @@ steps:
           This is the [Markdown Guide](https://www.markdownguide.org)
         "
         $MyMarkDown | Out-File -FilePath .\MyMarkdown.md
+        Write-Output pwd
+        Write-Output ls
         Write-Output "##vso[task.uploadsummary].\MyMarkdown.md"
 
   
