@@ -16,15 +16,15 @@ steps:
     inputs:
       targetType: 'inline'
       script: |
-        $MyMarkDown = "
+        $MyMarkDown = '
           # Hello World
           Check out my markdown.
-          This is the [Markdown Guide](https://www.markdownguide.org)
-        "
+           - This is the [Markdown Guide](https://www.markdownguide.org)
+           - This is [Google](https://www.google.com)
+        '
         $MyMarkDown | Out-File -FilePath .\MyMarkdown.md
-        dir
-        pwd
-        Write-Output $env:System_DefaultWorkingDirectory
-        Write-Output "##vso[task.uploadsummary]$env:System_DefaultWorkingDirectory\MyMarkdown.md"
+        Write-Output "Here is the markdown:"
+        Write-Output $MyMarkDown
+        Write-Output " ##vso[task.addattachment type=Distributedtask.Core.Summary;name=Testing Links;]$env:System_DefaultWorkingDirectory\MyMarkdown.md"
 
   
