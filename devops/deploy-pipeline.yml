@@ -4,6 +4,7 @@
 # https://aka.ms/yaml
 
 trigger: none
+pr: none
 
 resources:
   pipelines:
@@ -17,7 +18,10 @@ pool:
 
 steps:
 - bash: |
+    echo "Present working Dir"
     pwd
+    echo "List contents"
     ls
+    echo $(Build.ArtifactStagingDirectory)
     ls $(Build.ArtifactStagingDirectory)
 - bash: echo "Chained pipelines is an interesting concept."
