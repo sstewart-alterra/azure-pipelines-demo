@@ -17,3 +17,4 @@ pool:
 
 steps:
 - bash: echo "This pipeline, deploy, runs after the build pipeline completes."
+- bash: echo "Chained pipelines is an interesting concept."
