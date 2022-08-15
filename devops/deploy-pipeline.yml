@@ -16,5 +16,8 @@ pool:
 
 
 steps:
-- bash: echo "This pipeline, deploy, runs after the build pipeline completes."
+- bash: |
+    pwd
+    ls
+    ls $(Build.ArtifactStagingDirectory)
 - bash: echo "Chained pipelines is an interesting concept."
